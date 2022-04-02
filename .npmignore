@@ -3,7 +3,7 @@ test*
 tsconfig.json
 package-log.json
 .gitignore
-.eslint.json
+.eslintrc.json
 sample*
 MLBInfo.ts
 MLBInfo.js.map
