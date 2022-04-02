@@ -242,6 +242,15 @@ Get an array of Team objects
 
 **Returns**: , Array of Team objects with name, colors, timezone, ...
 
+### getTeamByVenueId(venueId)
+
+Lookup a Team by the venueId
+
+**Parameters**
+
+**venueId**: , Like "3" is Fenway Park, ...
+
+**Returns**: , Team object with name, colors`, ... or undefined
 
 ### getVenueById(venueId) 
 

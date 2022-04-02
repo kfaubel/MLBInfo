@@ -77,6 +77,7 @@ export declare const mlbinfo: {
     getLeagues: () => Leagues;
     getDivisionsByLeagueId: (leagueId: string) => Divisions | undefined;
     getTeamsByDivision: (divisionId: string) => Teams | undefined;
+    getTeamByVenueId: (venueId: string) => Team | undefined;
     getVenueById: (venueId: string | number) => Venue | undefined;
     getVenueByShortName: (venueShortName: string) => Venue | undefined;
 };

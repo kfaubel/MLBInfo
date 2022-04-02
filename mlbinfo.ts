@@ -188,9 +188,18 @@ const getTeamsByDivision = (divisionId: string): Teams | undefined => {
 };
 
 /**
+ * Lookup a Team by the venueId
+ * @param venueId Like "3" is Fenway Park, ...
+ * @returns Team object with name, colors`, ... or undefined
+ */
+const getTeamByVenueId = (venueId: string): Team | undefined => {
+    return teamsTable.find((team: Team) => {return team.venueId === venueId;});
+};
+
+/**
  * Lookup a Venue by its statsapi id
  * @param venueId Like "3" is Fenway Park, ...
- * @returns Venue objectwith name, colors`, ... or undefined
+ * @returns Venue object with name, colors`, ... or undefined
  */
 const getVenueById = (venueId: string | number): Venue | undefined => {
     return venueTable.find((venue: Venue) => {return venue.id === venueId + "";});
@@ -199,12 +208,11 @@ const getVenueById = (venueId: string | number): Venue | undefined => {
 /**
  * Lookup a Venue by its short name
  * @param venueShortName Like "Fenway", "Petco", "Citi", ...
- * @returns Venue objectwith name, colors`, ... or undefined
+ * @returns Venue object with name, colors`, ... or undefined
  */
 const getVenueByShortName = (venueShortName: string): Venue | undefined => {
     return venueTable.find((venue: Venue) => {return venue.shortName === venueShortName;});
 };
-
 
 export const mlbinfo = {
     getTeamByAbbreviation,
@@ -216,6 +224,7 @@ export const mlbinfo = {
     getLeagues,
     getDivisionsByLeagueId,
     getTeamsByDivision,
+    getTeamByVenueId,
     getVenueById,
     getVenueByShortName,
 };

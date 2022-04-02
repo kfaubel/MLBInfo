@@ -87,6 +87,10 @@ test("getTeamsByDivision get undefined for division id 500", () => {
     expect(mlbinfo.getTeamsByDivision("500")?.[0].name).toBe(undefined);
 });
 
+test("getTeamByVenueId get Red Sox for venueID of 3", () => {
+    expect(mlbinfo.getTeamByVenueId("3")?.abbreviation).toBe("BOS");
+});
+
 // Venue tests
 test("getVenueById get object with name \"Coors Field\" from venueId 19", () => {
     expect(mlbinfo.getVenueById("19")?.name).toBe("Coors Field");
