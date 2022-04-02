@@ -1,0 +1,34 @@
+// Base set from: https://github.com/tsconfig/bases/blob/main/bases/node14.json
+// Ref: https://www.typescriptlang.org/tsconfig
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Node 14",
+  
+    "compilerOptions": {
+      "module": "commonjs",                         // Reccomended for Node 14 - what module resolution system to assume when generating JS code
+      "target":"es6",                               // Run on all current platforms
+
+      "moduleResolution": "Node",                   // How tsc tries to find modules, tsc matches nodejs so "node" is the best choice.  Default for Node.
+
+      "strict": true,                               // Reccomended for Node 14
+      "esModuleInterop": true,                      // Reccomended for Node 14
+      "skipLibCheck": true,                         // Reccomended for Node 14
+      "forceConsistentCasingInFileNames": true,     // Reccomended for Node 14
+
+      "sourceMap": true,                            // Generates .map file for debugging
+      "outDir": ".",                                // write .js and .map files here
+      "rootDir": ".",                               // Prevent an extra /src in the ourDir folder
+      "baseUrl": ".",                               // Assume imports are relative to current directory
+      "declaration": true,                          // Emit *.d.ts files
+
+      "noImplicitAny": true,                        // Extra checking
+      "strictNullChecks": true                      // Extra checking
+    },
+  
+  "include": [
+      "*.ts"
+     ],
+  "exclude": [
+      "node_modules"
+  ]
+}

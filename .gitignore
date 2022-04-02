@@ -102,3 +102,12 @@ dist
 
 # TernJS port file
 .tern-port
+sample.d.ts
+sample.js.map
+sample.js
+MLBInfo.js
+MLBInfo.js.map
+.gitignore
+MLBInfo.test.js.map
+MLBInfo.test.js
+MLBInfo.test.d.ts
