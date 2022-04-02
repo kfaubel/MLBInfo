@@ -1,6 +1,6 @@
 {
   "name": "mlbinfo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Lookup for MLB teams, divisions and conferences.  Useful with statsapi.mlb.com.",
   "repository": {
     "type": "git",
