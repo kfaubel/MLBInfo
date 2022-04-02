@@ -4,7 +4,7 @@
   "description": "Lookup for MLB teams, divisions and conferences.  Useful with statsapi.mlb.com.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kfaubel/MLBInfo.git"
+    "url": "git+https://github.com/kfaubel/mlbinfo.git"
   },
   "keywords": [
     "MLB"
@@ -12,15 +12,15 @@
   "author": "Ken Faubel",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kfaubel/MLBInfo/issues"
+    "url": "https://github.com/kfaubel/mlbinfo/issues"
   },
-  "homepage": "https://github.com/kfaubel/MLBInfo#readme",
-  "main": "./MLBInfo.js",
-  "types": "./MLBInfo.d.ts",
+  "homepage": "https://github.com/kfaubel/mlbinfo#readme",
+  "main": "./mlbinfo.js",
+  "types": "./mlbnfo.d.ts",
   "scripts": {
     "start": "tsc && node sample.js",
-    "test": "tsc && node sample.js && jest --coverage MLBInfo.test.ts",
-    "jsdox": "tsc && jsdox MLBInfo.js"
+    "test": "tsc && node sample.js && jest --coverage mlbinfo.test.ts",
+    "jsdox": "tsc && jsdox mlbinfo.js"
   },
   "devDependencies": {
     "@types/jest": "^27.4.1",
