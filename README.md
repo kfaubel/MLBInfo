@@ -1,4 +1,4 @@
-# mlb-info
+# mlbinfo
 Helper package for working with Major League Baseball (MLB) leagues, divisions, teams and venues.  The statsapi.mlb.com refers to these elements by an ID they assign to each.  
 Leagues are defined like this:
 * 103 - American League
@@ -18,7 +18,7 @@ Venues are defined like this:
 * 3313 - Yankee Stadium
 * ...
 
-While parsing information on statsapi,mlb.comm it is certainly possible to do calls the the following REST endpoints:
+While parsing information on statsapi.mlb.comm it is certainly possible to do calls the the following REST endpoints:
 * https://statsapi.mlb.com/api/v1/league/103 - Get details for the AL
 * https://statsapi.mlb.com/api/v1/divisions/201 - Get details for the AL East division
 * https://statsapi.mlb.com/api/v1/teams/111 - Get details for the Boston Red Sox
@@ -33,31 +33,31 @@ The teams and some venues have a set of colors associated with them.  The team c
 ## Install
 
 ```bash
-npm install mlb-info --save
+npm install mlbinfo --save
 ```
 
 ## Usage
 Sample.ts 
 ```typescript
-import { MlbInfo } from "mlb-info";
+import { mlbinfo } from "mlbinfo";
 
 const main = async () => {
     const leagues = MlbInfo.getLeagues();
 
     for (const league of leagues) {
-        const divisions = MlbInfo.getDivisionsByLeagueId(league.id);
+        const divisions = mlbinfo.getDivisionsByLeagueId(league.id);
         if (typeof divisions === "undefined") {
             continue;
         }
         
         for (const division of divisions) {
-            const teams = MlbInfo.getTeamsByDivision(division.id);
+            const teams = mlbinfo.getTeamsByDivision(division.id);
             if (typeof teams === "undefined") {
                 continue;
             }
             console.log(`${league.name} ${division.name}`);
             for (const team of teams) {
-                const venue = MlbInfo.getVenueById(team.venueId);
+                const venue = mlbinfo.getVenueById(team.venueId);
                 console.log(`    ${(team.abbreviation).padEnd(5)} ${(team.name).padEnd(22)} play at ${(venue?.name)?.padEnd(28)} ${team.timeZone}`);
             }
         }
@@ -263,19 +263,3 @@ Lookup a Venue by its short name
 **venueShortName**: , Like "Fenway", "Petco", "Citi", ...
 
 **Returns**: , Venue objectwith name, colors`, ... or undefined
-
-
-
-export declare const MlbInfo: {
-    getTeamByAbbreviation: (teamAbbreviation: string) => Team | undefined;
-    getTeamById: (teamId: string | number) => Team | undefined;
-    getLeagueByAbbreviation: (LeagueAbbreviation: string) => League | undefined;
-    getLeagueById: (LeagueId: string | number) => League | undefined;
-    getDivisionByAbbreviation: (LeagueAbbreviation: string, divisionAbbreviation: string) => Division | undefined;
-    getDivisionById: (divisionId: string | number) => Division | undefined;
-    getLeagues: () => Leagues;
-    getDivisionsByLeagueId: (leagueId: string) => Divisions | undefined;
-    getTeamsByDivision: (divisionId: string) => Teams | undefined;
-    getVenueById: (venueId: string | number) => Venue | undefined;
-    getVenueByShortName: (venueShortName: string) => Venue | undefined;
-};
