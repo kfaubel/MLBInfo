@@ -9,6 +9,6 @@ MLBInfo.ts
 MLBInfo.js.map
 MLBInfo.test*
 output
-converage
+coverage
 node_modules
 jest.config.js
